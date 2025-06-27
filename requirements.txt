@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pydantic
+pymysql
+python-dotenv
+pandas
+xgboost
+joblib
+sqlalchemy
+scikit-learn
+requests
+sentence-transformers
+qdrant-client
