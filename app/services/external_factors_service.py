@@ -32,7 +32,7 @@ def save_external_factors_for_next_week():
 
     for franchise in get_all_franchise_addresses():
         try:
-            address = franchise["franchise_address"]
+            address = franchise["franchise_address_road"]
             print(f"📥 원본 주소: {address}")
         except Exception as e:
             print(f"❌ address 추출 실패 → {e}")
@@ -48,8 +48,9 @@ def save_external_factors_for_next_week():
             print(f"⚠️ 지역 코드 매핑 실패: '{region_name}' → 예보 API 호출 스킵")
             continue
 
-        weather_data = get_weekly_weather_forecast(region_code, next_week_dates[0])
-        rain_data = get_weekly_rain_forecast(region_code, next_week_dates[0])
+        weather_data = get_weekly_weather_forecast(region_code)
+        rain_data = get_weekly_rain_forecast(region_code)
+
 
         for i, target_date in enumerate(next_week_dates):
             key = f"D{3 + i}"

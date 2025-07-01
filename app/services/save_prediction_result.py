@@ -8,11 +8,11 @@ def save_prediction_result(prediction_input: PredictionInput) -> int:
 
     # 가맹점 주소 조회
     cursor.execute("""
-        SELECT franchise_address FROM franchise
+        SELECT franchise_address_road FROM franchise
         WHERE franchise_id = %s
     """, (prediction_input.franchise_id,))
     row = cursor.fetchone()
-    address = row["franchise_address"] if row else ""
+    address = row["franchise_address_road"] if row else ""
     region = " ".join(address.split()[:2]) if address else "알 수 없음"
 
     # 외부 요인 조회

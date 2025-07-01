@@ -15,7 +15,7 @@ def generate_weekly_predictions():
     franchises = get_all_franchise_addresses()
     for row in franchises:
         franchise_id = row["franchise_id"]
-        address = row["franchise_address"]
+        address = row["franchise_address_road"]
 
         region_code, region_name = resolve_midterm_region_code(address)
         forecast = get_weekly_weather_forecast(region_code, start_date.isoformat())

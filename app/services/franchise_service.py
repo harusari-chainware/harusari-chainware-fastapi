@@ -8,13 +8,13 @@ def get_all_franchise_addresses() -> list[dict]:
 
     try:
         cursor = conn.cursor()  
-        cursor.execute("SELECT franchise_id, franchise_address FROM franchise")
+        cursor.execute("SELECT franchise_id, franchise_address_road FROM franchise")
         rows = cursor.fetchall()
 
         print("📋 가맹점 주소 목록:")
         for row in rows:
             print(f"👀 raw row: {row}")
-            print(f"  - ID {row['franchise_id']}: {row['franchise_address']}")
+            print(f"  - ID {row['franchise_id']}: {row['franchise_address_road']}")
 
         return rows
     finally:

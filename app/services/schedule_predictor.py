@@ -21,7 +21,7 @@ def predict_sales_for_next_week_all_franchises() -> int:
 
     for franchise in franchises:
         franchise_id = franchise["franchise_id"]
-        address = franchise["franchise_address"]
+        address = franchise["franchise_address_road"]
 
         if not address:
             print(f"❌ 주소 없음 → franchise_id: {franchise_id}")
